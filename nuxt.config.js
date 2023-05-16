@@ -1,4 +1,6 @@
 export default {
+    mode : 'universal',
+
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'myApp',
@@ -17,11 +19,18 @@ export default {
         ]
     },
 
+    loading: {
+      color: '#ff8e14'
+    },
+
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [
+        '~plugins/core-components.js',
+        '~plugins/date-filter.js'
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -33,5 +42,9 @@ export default {
     modules: [],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {},
+
+    env: {
+        firebaseUrl: 'https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app'
+    }
 }

@@ -23,7 +23,7 @@ export const mutations = {
 
 export const actions = {
     nuxtServerInit(vuexContext, context) {
-        const url = 'https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app/posts.json'
+        const url = process.env.firebaseUrl + '/posts.json'
         return axios.get(url)
             .then(response => {
                 const postsArray = []

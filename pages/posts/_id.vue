@@ -3,7 +3,7 @@
         <section class="post">
             <div class="post-title">{{ loadedPost.title }}</div>
             <div class="post-details">
-                <div>Last updated on: {{ loadedPost.date }}</div>
+                <div>Last updated on: {{ loadedPost.date | date }}</div>
                 <div>Written by {{ loadedPost.author }}</div>
             </div>
             <div class="post-content">{{ loadedPost.text }}</div>
@@ -19,7 +19,7 @@ import axios from 'axios'
 
 export default {
     asyncData(context) {
-        const url = `https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app/posts/${ context.route.params.id }.json`
+        const url = `${ process.env.firebaseUrl }/posts/${ context.route.params.id }.json`
         return axios.get(url)
             .then(response => {
                 return {

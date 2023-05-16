@@ -19,7 +19,7 @@ export default {
     },
 
     asyncData(context) {
-        const url = `https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app/posts/${ context.route.params.postId }.json`
+        const url = `${ process.env.firebaseUrl }/posts/${ context.route.params.postId }.json`
 
         return axios.get(url)
             .then(response => {
