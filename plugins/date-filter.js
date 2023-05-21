@@ -20,12 +20,13 @@ const dateFilter = value => {
 };
 
 function formatDate(inputDate) {
-    const date = new Date(inputDate);
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
-    const formattedDate = day + ". " + months[month] + " " + year;
-    return formattedDate;
+    const date = new Date(inputDate)
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const day = date.getDate()
+    const formattedDate = day + ". " + months[month] + " " + year
+
+    return formattedDate
 }
 
 Vue.filter('date', dateFilter)

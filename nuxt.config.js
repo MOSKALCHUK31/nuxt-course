@@ -45,6 +45,8 @@ export default {
     build: {},
 
     env: {
-        firebaseUrl: 'https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app'
+        firebaseUrl: 'https://nuxt-blog-26a45-default-rtdb.europe-west1.firebasedatabase.app',
+        apiKey: 'AIzaSyAE71tFQWikgAtblUGwy25s_c8uO8X1_ng'
+
     }
 }
